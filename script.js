@@ -1,13 +1,17 @@
 const readMoreBtn = document.querySelector(".read-more-btn");
-      const textContent = document.querySelector(".text-content");
+const textContent = document.querySelector(".text-content");
 
-      readMoreBtn.addEventListener("click", function () {
-        textContent.classList.toggle("expanded");
+readMoreBtn.addEventListener("click", function () {
+  textContent.classList.toggle("expanded");
+  readMoreBtn.textContent = textContent.classList.contains("expanded")
+    ? "Read Less"
+    : "Read More";
+});
 
-        if (textContent.classList.contains("expanded")) {
-          readMoreBtn.textContent = "Read Less";
-        } else {
-          readMoreBtn.textContent = "Read More";
-        }
-      });
+// Optional: Mobile nav toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
